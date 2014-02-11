@@ -111,7 +111,7 @@ class Control extends Thread{
 			Motor.C.forward();
 			
 		}
-	} //wolla
+	} //woll
 
 	public String s() {
 		
