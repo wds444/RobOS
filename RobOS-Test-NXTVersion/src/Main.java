@@ -3,19 +3,29 @@ import lejos.nxt.Button;
 import lejos.nxt.Sound;
 import lejos.nxt.LCD;
 public class Main {
+	public static BTConnection BTLink;
+	  public static BTConnection btLink;
 
 	public static void main(String[] args) {
 		MDraw G2d = new MDraw();
-		//G2d.DrawHorz(10, 10, 100);
+		G2d.DrawHorz(10, 10, 100);
 		MMuziek player = new MMuziek();
 		player.IntroMuziek();
 		G2d.FillRect(10, 10, 100, 100);
 		
-		//System.out.println("Booting");
+		System.out.println("Booting");
 		Button.waitForAnyPress();
 		
 		
 		
+
+	}
+	public static void connect()
+	{ 
+	   System.out.println("Listening");
+	   BTLink = Bluetooth.waitForConnection();   
+	   dataOut = BTLink.openDataOutputStream();
+	   dataIn = BTLink.openDataInputStream();
 
 	}
 	
@@ -24,7 +34,7 @@ public class Main {
 }
 class MMuziek{
 	public void IntroMuziek() {
-		/*Sound.beep();
+		Sound.beep();
 		Sound.pause(5);
 		Sound.beep();
 		Sound.playNote(Sound.PIANO, 700, 2000);

@@ -23,7 +23,7 @@ public class Main
     DataInputStream In = connection.openDataInputStream();
     Controller control = new Controller(Out, In);
   }   
-}
+}//a
 class Controller{
 	private int cmd1,cmd2,cmd3,cmd0;
 	private NXTRegulatedMotor motorL= Motor.A,motorR= Motor.B, motorF = Motor.C;
